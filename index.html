@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VehiCare - Indian Road Maintenance Personalized</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glob"></div>
+    <div class="app-container">
+        <header>
+            <div class="logo">VehiCare <span class="accent">India</span></div>
+            <p class="tagline">Personalized maintenance for Indian terrains.</p>
+        </header>
+
+        <main>
+            <section class="input-section" id="inputSection">
+                <div class="card glass-card">
+                    <h2>Vehicle Profiler</h2>
+                    <form id="vehicleForm">
+                        <div class="form-group">
+                            <label for="vehicleType">Vehicle Type</label>
+                            <select id="vehicleType" required>
+                                <option value="" disabled selected>Select Type</option>
+                                <option value="hatchback">Hatchback</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV / Crossover</option>
+                                <option value="bike">Motorcycle (100-200cc)</option>
+                                <option value="scooter">Scooter</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fuelType">Fuel Type</label>
+                            <select id="fuelType" required>
+                                <option value="petrol">Petrol</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="cng">CNG</option>
+                                <option value="ev">Electric</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Vehicle Age (Years)</label>
+                            <input type="number" id="age" min="0" max="30" placeholder="e.g. 3" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mileage">Odometer (km)</label>
+                            <input type="number" id="mileage" min="0" step="500" placeholder="e.g. 25000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="condition">Driving Conditions</label>
+                            <select id="condition" required>
+                                <option value="city">City (Stop & Go Traffic)</option>
+                                <option value="highway">Highway (Long Distance)</option>
+                                <option value="mixed">Mixed</option>
+                                <option value="rough">Rough / Rural Roads</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Generate Schedule</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="results-section hidden" id="resultsSection">
+                <div class="back-link" id="backBtn">← Configure details</div>
+                
+                <div class="results-grid">
+                    <div class="card glass-card info-card">
+                        <h3>Maintenance Score</h3>
+                        <div class="score-ring" id="maintenanceScore">Calculating...</div>
+                        <p class="score-desc" id="scoreDesc">Based on your inputs</p>
+                    </div>
+
+                    <div class="card glass-card action-card">
+                        <h3>Critical Attention Needed</h3>
+                        <ul id="criticalList" class="checklist">
+                            <!-- JS populated -->
+                        </ul>
+                    </div>
+
+                    <div class="card glass-card schedule-card">
+                        <h3>Upcoming Schedule</h3>
+                        <div class="timeline" id="timeline">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+
+                    <div class="card glass-card upgrade-card">
+                        <h3>Recommended Upgrades</h3>
+                        <div class="upgrades-container" id="upgradesList">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 VehiCare India. Optimized for local road conditions.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

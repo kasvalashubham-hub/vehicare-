@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "vehicare-india",
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" }
+  ]
+}
